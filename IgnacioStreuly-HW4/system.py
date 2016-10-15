@@ -1,3 +1,6 @@
+import operator
+
+
 def main():
     count_table = {}
     likelihood_table = {}
@@ -16,7 +19,6 @@ def main():
             value = array[0]
             pos = array[1]
             pos = pos.replace("\n", "")
-            value = value.lower()
 
             if not pos in count_table:
                 count_table[pos]= 1
@@ -87,5 +89,22 @@ def main():
             for key, value in bigram_likelihood_table.iteritems():
                     if key[1] == current_pos:
                         prior_probability_table[current_pos][key] = value
+
+
+    # HMM POS Tagging
+
+    output = []
+
+    with open("development_set.txt", "r+") as f:
+        line_counter = 0
+        for line in f:
+            word = line.rstrip()
+
+            if line_counter == 0:
+                most_likely_first = max(likelihood_table.iteritems(), key=operator.itemgetter(1))[0]
+                output.append([word, most_likely_first])
+            else:
+                
+
 
 main()
