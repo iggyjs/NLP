@@ -1,0 +1,56 @@
+Last login: Sun Nov  6 17:56:16 on ttys001
+IgnaciosMacbookPro-2:IgnacioStreuly-HW3 iggy$ python parser.py 
+(S
+  (S (NP (NNS Scientists)) (VP (VBD think) (IN that)))
+  (S
+    (NP
+      (NP (Det any) (JJ habitable) (NNS areas))
+      (PP (IN on) (NP (Det the) (NN planet))))
+    (VP (VPB are) (PP (IN on) (Det the) (NN border) (NN region)))))
+IgnaciosMacbookPro-2:IgnacioStreuly-HW3 iggy$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

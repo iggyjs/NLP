@@ -126,12 +126,12 @@ def main():
             for key, value in bigram_likelihood_table.iteritems():
                     if key[1] == current_pos:
                         prior_probability_table[current_pos][key] = value
-
+                        print current_pos, key, value, "\n"
 
     # HMM POS Tagging
 
     output = []
-    with open("development_set.txt", "r+") as f:
+    with open("final_run_system.words", "r+") as f:
         line_counter = 0
         appends = 0
 
@@ -196,6 +196,8 @@ def main():
         print line_counter, " lines read."
         print appends, " POS's appended to output"
 
+        write_to_file(output)
+
 def calculate_max_exception(k, v, previous_pos_tag, prior_probability_table):
     pos_document_probability = v
     pos = k
@@ -217,5 +219,21 @@ def calculate_max(k, v, previous_pos_tag, prior_probability_table):
 
     max_val = likelihood_probability * prior_probability_table[pos][search_key]
     return [pos, max_val]
+
+
+
+def write_to_file(output):
+    # TODO write to file
+    with open("ijs253.pos", "w+") as f:
+        for i in range(len(output)):
+            if output[i][0] == "":
+                f.write("\n")
+                continue
+            else:
+                f.write(output[i][0])
+                f.write("\t")
+                f.write(output[i][1])
+                f.write("\n")
+
 
 main()
